@@ -45,35 +45,6 @@ app.post("/signup", async (req, res) => {
   }
 });
 
-// app.post("/signup", async (req, res) => {
-//   try {
-//     const { name, email, password } = req.body;
-//     const userExists = await User.findOne({ email });
-//     if (userExists) {
-//       return res.status(400).json({ error: "User already exists" });
-//     }
-//     const newUser = new User({
-//       id: Math.floor(Math.random() * 1000000),
-//       name,
-//       email,
-//     });
-//     const savedUser = await newUser.save();
-
-//     const newLogin = new Login({
-//       id: Math.floor(Math.random() * 1000000),
-//       hash: password, // remember to hash
-//       email,
-//       name,
-//     });
-//     const savedLogin = await newLogin.save();
-
-//     res.json({ email: email, name: name });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Internal server error" });
-//   }
-// });
-
 app.post("/signin", async (req, res) => {
   try {
     const { email, password } = req.body;
